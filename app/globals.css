@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0d2438;
+  --color-navy-claro: #17384f;
+  --color-navy-borda: #24485f;
+  --color-creme: #f6f1e7;
+  --color-creme-claro: #fbf8f2;
+  --color-dourado: #c9a44c;
+  --color-verde: #1fa855;
+  --color-verde-escuro: #178943;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-creme-claro);
+  color: var(--color-navy);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Rotulo de secao: o texto pequeno em maiusculas acima de cada titulo */
+.rotulo {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-dourado);
+}
