@@ -14,6 +14,16 @@ export const escritorio = {
   youtube: 'https://www.youtube.com/@fabioribeiroadvogados',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? '5579999999999',
 
+  /**
+   * Fotos. Coloque os arquivos em public/ com exatamente estes nomes.
+   * Retrato: vertical, proporção 4:5, rosto na metade superior (o corte é object-top).
+   * Escritório: horizontal, proporção 4:3.
+   */
+  fotos: {
+    advogado: '/dr-fabio-ribeiro.jpg',
+    escritorio: '/dr-fabio-ribeiro-escritorio.jpg',
+  },
+
   unidades: [
     { cidade: 'Aracaju', uf: 'SE', rotulo: 'Sede', endereco: 'TODO: endereço completo' },
     { cidade: 'Aracaju', uf: 'SE', rotulo: 'Santa Maria', endereco: 'TODO: endereço completo' },

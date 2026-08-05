@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { Campanha } from '@/campanhas/tipos'
 import { LinkWhatsApp } from '@/components/ui/LinkWhatsApp'
 import { IconeWhatsApp } from '@/components/ui/IconeWhatsApp'
@@ -45,14 +46,23 @@ export function Heroi({ campanha }: { campanha: Campanha }) {
           </p>
         </div>
 
-        {/* Espaco reservado para a foto do advogado.
-            Troque por <Image src="/fabio-ribeiro.jpg" .../> quando tiver o arquivo. */}
-        <div className="hidden aspect-[4/5] items-end justify-center rounded-lg border border-navy-borda bg-navy-claro md:flex">
-          <div className="p-6 text-center">
-            <p className="font-[family-name:var(--font-display)] text-6xl text-dourado">
+        {/* Retrato do advogado + selo de anos de atuação sobreposto. */}
+        <div className="relative hidden aspect-[4/5] overflow-hidden rounded-lg bg-navy-claro md:block">
+          <Image
+            src={escritorio.fotos.advogado}
+            alt={`${escritorio.advogado}, advogado previdenciarista`}
+            fill
+            sizes="(min-width: 768px) 45vw, 100vw"
+            className="object-cover object-top"
+            /* É a maior imagem da dobra: carrega primeiro pra não penalizar o LCP. */
+            priority
+          />
+
+          <div className="absolute bottom-4 left-4 rounded-md bg-navy/85 px-4 py-3 backdrop-blur-sm">
+            <p className="font-[family-name:var(--font-display)] text-3xl leading-none text-dourado">
               {anosDeAtuacao}
             </p>
-            <p className="text-xs tracking-[0.2em] text-white/50">ANOS DE ATUAÇÃO</p>
+            <p className="mt-1 text-[0.6rem] tracking-[0.2em] text-white/60">ANOS DE ATUAÇÃO</p>
           </div>
         </div>
       </div>

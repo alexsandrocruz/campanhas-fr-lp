@@ -1,11 +1,19 @@
+import Image from 'next/image'
 import { escritorio, anosDeAtuacao } from '@/lib/escritorio'
 
 export function Autoridade() {
   return (
     <section className="bg-creme-claro">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-20">
-        {/* Espaco reservado para foto do escritorio ou do advogado. */}
-        <div className="aspect-[4/3] rounded-lg bg-navy/5" />
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-navy/5">
+          <Image
+            src={escritorio.fotos.escritorio}
+            alt={`${escritorio.advogado} no escritório`}
+            fill
+            sizes="(min-width: 768px) 45vw, 100vw"
+            className="object-cover"
+          />
+        </div>
 
         <div>
           <p className="rotulo">O escritório</p>
