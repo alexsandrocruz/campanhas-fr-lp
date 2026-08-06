@@ -1,5 +1,6 @@
 import type { Campanha } from './tipos'
 import { bpcLoas } from './bpc-loas'
+import { aposentadoriaPorIdade } from './aposentadoria-por-idade'
 
 /**
  * Registro de campanhas ativas.
@@ -11,7 +12,7 @@ import { bpcLoas } from './bpc-loas'
  *
  * Pronto — no ar em /{slug}, sem tocar em componente nenhum.
  */
-const registro: Campanha[] = [bpcLoas]
+const registro: Campanha[] = [bpcLoas, aposentadoriaPorIdade]
 
 export const campanhas: Record<string, Campanha> = Object.fromEntries(
   registro.map((c) => [c.slug, c]),
