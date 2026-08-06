@@ -163,13 +163,7 @@ export const bpcLoas: Campanha = {
   formulario: {
     titulo: 'Conte seu caso',
     subtitulo: 'A gente explica o que dá para fazer.',
-    assuntos: [
-      'Meu BPC/LOAS foi negado',
-      'Quero pedir o BPC pela primeira vez',
-      'Meu benefício foi cortado ou suspenso',
-      'Não sei se tenho direito',
-      'Outro assunto',
-    ],
+    formId: '3a22e92b-6c6d-6ca1-f403-37a33c692b40',
   },
 
   whatsapp: {
