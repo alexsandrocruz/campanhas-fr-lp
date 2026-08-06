@@ -79,7 +79,7 @@ E as variáveis de ambiente na Vercel (veja `.env.example`):
 | `NEXT_PUBLIC_WHATSAPP` | Número de destino, só dígitos: `55` + DDD + número |
 | `NEXT_PUBLIC_META_PIXEL_ID` | Pixel do Meta Ads |
 | `NEXT_PUBLIC_GA4_ID` | Medição do GA4 |
-| `NEXT_PUBLIC_LEADS_EMBED_API_URL` | API pública do Dominus Leads |
+| `NEXT_PUBLIC_LEADS_EMBED_API_URL` | API pública do Dominus Leads; sem ela, usa STG temporariamente |
 
 O identificador do formulário é definido em cada campanha. O script do Dominus cria o lead
 diretamente no sistema geral e a conversão só é registrada após o evento de sucesso do embed.
