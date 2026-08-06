@@ -33,19 +33,19 @@ export function Formulario({ campanha }: { campanha: Campanha }) {
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24 lg:px-8">
         <div>
           <p className="rotulo">Análise do seu caso</p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold tracking-[-0.03em] md:text-4xl">
+          <h2 className="mt-3 max-w-lg font-[family-name:var(--font-display)] text-3xl font-bold leading-[1.12] tracking-[-0.035em] md:text-4xl">
             {campanha.formulario.titulo}
             <span className="block text-dourado">{campanha.formulario.subtitulo}</span>
           </h2>
 
-          <ul className="mt-8 space-y-3 text-sm text-white/65">
-            <li>✓ Resposta pelo WhatsApp, no seu tempo</li>
-            <li>✓ Atendimento em todo o Brasil</li>
-            <li>✓ Linguagem simples, sem juridiquês</li>
+          <ul className="mt-8 space-y-3.5 text-sm leading-relaxed text-white/70">
+            <li className="flex gap-3"><span className="text-dourado">✓</span>Resposta pelo WhatsApp, no seu tempo</li>
+            <li className="flex gap-3"><span className="text-dourado">✓</span>Atendimento em todo o Brasil</li>
+            <li className="flex gap-3"><span className="text-dourado">✓</span>Linguagem simples, sem juridiquês</li>
           </ul>
         </div>
 
-        <div className="rounded-xl bg-creme-claro p-6 text-navy shadow-2xl shadow-black/20 md:p-8">
+        <div className="w-full max-w-xl justify-self-center rounded-2xl bg-creme-claro p-6 text-navy shadow-2xl shadow-black/20 md:p-8">
           {scriptUrl ? (
             <>
               <div id={mountId} className="dominus-leads-embed" />
