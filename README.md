@@ -19,7 +19,7 @@ site principal.
 São três passos, nenhum deles mexe em componente:
 
 1. Copie `campanhas/bpc-loas.ts` para, por exemplo, `campanhas/auxilio-doenca.ts`
-2. Troque o `slug` e todos os textos
+2. Troque o `slug`, os textos e o `formId` do formulário publicado no Dominus Leads
 3. Importe e adicione ao array em `campanhas/index.ts`
 
 ```ts
@@ -42,7 +42,6 @@ app/
   layout.tsx                    Pixel Meta + GA4, noindex global
   [campanha]/page.tsx           Monta a landing a partir do objeto Campanha
   [campanha]/obrigado/          Página de conversão — onde o evento Lead dispara
-  api/lead/route.ts             Valida o formulário e repassa ao webhook
   robots.ts                     Bloqueia indexação do subdomínio inteiro
 
 campanhas/
@@ -57,7 +56,7 @@ components/ui/                  LinkWhatsApp (rastreado), ícones
 lib/
   escritorio.ts                 Dados fixos: OAB, unidades, contato
   tracking.ts                   Eventos Meta + GA4, sempre com a campanha junto
-  utm.ts                        Captura e preserva a origem do tráfego
+  leads-embed.ts                Monta a URL do embed por ambiente
   whatsapp.ts                   Monta o wa.me com mensagem pré-preenchida
 ```
 
@@ -71,7 +70,7 @@ Confirme os `TODO` em `lib/escritorio.ts`:
 - [ ] Número da OAB
 - [ ] Endereços completos das 5 unidades
 - [ ] Link do canal no YouTube
-- [ ] Fotos: substituir os blocos vazios em `Heroi.tsx` e `Autoridade.tsx`
+- [ ] Confirmar se as fotos institucionais em `public/` são as versões finais
 
 E as variáveis de ambiente na Vercel (veja `.env.example`):
 
@@ -80,10 +79,10 @@ E as variáveis de ambiente na Vercel (veja `.env.example`):
 | `NEXT_PUBLIC_WHATSAPP` | Número de destino, só dígitos: `55` + DDD + número |
 | `NEXT_PUBLIC_META_PIXEL_ID` | Pixel do Meta Ads |
 | `NEXT_PUBLIC_GA4_ID` | Medição do GA4 |
-| `LEAD_WEBHOOK_URL` | Destino dos leads do formulário |
+| `NEXT_PUBLIC_LEADS_EMBED_API_URL` | API pública do Dominus Leads |
 
-Sem `LEAD_WEBHOOK_URL` o formulário continua funcionando — o lead vai para o log da
-Vercel. Dá pra publicar antes de a integração com CRM existir.
+O identificador do formulário é definido em cada campanha. O script do Dominus cria o lead
+diretamente no sistema geral e a conversão só é registrada após o evento de sucesso do embed.
 
 ---
 

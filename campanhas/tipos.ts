@@ -71,8 +71,8 @@ export type Campanha = {
   formulario: {
     titulo: string
     subtitulo: string
-    /** Opções do select "Sobre o que você quer falar?" */
-    assuntos: string[]
+    /** Identificador do formulário publicado no Dominus Leads. */
+    formId: string
   }
 
   whatsapp: {

@@ -54,6 +54,37 @@ a, button, input, select {
 
 .revelar-scroll-visivel { opacity: 1; transform: translateY(0); }
 
+/* O script do Dominus monta o formulário dinamicamente; estes estilos preservam a identidade da campanha. */
+.dominus-leads-embed form { gap: 14px !important; }
+.dominus-leads-embed label { gap: 7px !important; color: var(--color-navy); }
+.dominus-leads-embed label > span { font-size: 0.78rem !important; font-weight: 600 !important; }
+.dominus-leads-embed input:not([type="checkbox"]),
+.dominus-leads-embed select,
+.dominus-leads-embed textarea {
+  width: 100% !important;
+  border: 1px solid rgb(15 30 51 / 16%) !important;
+  border-radius: 6px !important;
+  background: #fff !important;
+  color: var(--color-navy) !important;
+  padding: 0.78rem 0.9rem !important;
+  font: inherit !important;
+  outline: none;
+}
+.dominus-leads-embed input:focus,
+.dominus-leads-embed select:focus,
+.dominus-leads-embed textarea:focus { border-color: var(--color-dourado) !important; }
+.dominus-leads-embed button[type="submit"] {
+  width: 100% !important;
+  margin-top: 0.25rem !important;
+  border-radius: 6px !important;
+  background: var(--color-dourado) !important;
+  color: var(--color-navy) !important;
+  padding: 0.9rem 1rem !important;
+  font: 600 0.95rem var(--font-sans) !important;
+}
+.dominus-leads-embed button[type="submit"]:hover { filter: brightness(1.04); }
+.dominus-leads-embed > form > div:last-child { min-height: 0 !important; }
+
 @keyframes revelar { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (prefers-reduced-motion: reduce) {
