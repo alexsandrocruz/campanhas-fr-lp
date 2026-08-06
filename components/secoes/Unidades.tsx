@@ -30,7 +30,7 @@ export function Unidades() {
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-navy/60">{unidade.endereco}</p>
                 <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${unidade.cidade}, ${unidade.uf}`)}`}
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${escritorio.nome}, ${unidade.rotulo}, ${unidade.endereco}`)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="mt-auto pt-5 text-sm font-semibold text-dourado transition hover:text-navy"

@@ -26,11 +26,11 @@ export const escritorio = {
   },
 
   unidades: [
-    { cidade: 'Aracaju', uf: 'SE', rotulo: 'Sede', endereco: 'TODO: endereço completo' },
-    { cidade: 'Aracaju', uf: 'SE', rotulo: 'Santa Maria', endereco: 'TODO: endereço completo' },
-    { cidade: 'Estância', uf: 'SE', rotulo: 'Centro', endereco: 'TODO: endereço completo' },
-    { cidade: 'Taguatinga', uf: 'DF', rotulo: 'Brasília', endereco: 'TODO: endereço completo' },
-    { cidade: 'Águas Lindas', uf: 'GO', rotulo: 'Águas Lindas de Goiás', endereco: 'TODO: endereço completo' },
+    { cidade: 'Aracaju', uf: 'SE', rotulo: 'Sede', endereco: 'R. Duque de Caxias, 188 - São José, Aracaju - SE, 49015-320' },
+    { cidade: 'Aracaju', uf: 'SE', rotulo: 'Santa Maria', endereco: 'Av. Alexandre Alcino, 2695 - Santa Maria, Aracaju - SE, 49044-440' },
+    { cidade: 'Estância', uf: 'SE', rotulo: 'Centro', endereco: 'R. Raimundo Costa Carvalho, 125 - Centro, Estância - SE, 49200-000' },
+    { cidade: 'Taguatinga', uf: 'DF', rotulo: 'Brasília', endereco: 'St. A Norte QNA 3 Sl 01 - Taguatinga, Brasília - DF, 72110-030' },
+    { cidade: 'Águas Lindas', uf: 'GO', rotulo: 'Águas Lindas de Goiás', endereco: 'Rua 9, QD 42, LT 1A, CJ. A, SALA 03 Setor 02, Águas Lindas de Goiás - GO, 72910-000' },
   ],
 } as const
 
