@@ -1,4 +1,6 @@
 import { escritorio } from '@/lib/escritorio'
+import { IconeLinha } from '@/components/ui/IconeLinha'
+import { Revelar } from '@/components/ui/Revelar'
 
 export function Unidades() {
   return (
@@ -14,18 +16,29 @@ export function Unidades() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {escritorio.unidades.map((unidade) => (
-            <div
+        <div className="mt-11 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {escritorio.unidades.map((unidade, indice) => (
+            <Revelar key={`${unidade.cidade}-${unidade.rotulo}`} atraso={(indice % 4) * 80} className="h-full">
+              <article
               key={`${unidade.cidade}-${unidade.rotulo}`}
-              className="rounded-xl border border-navy/10 bg-white p-5 shadow-sm"
+                className="flex h-full min-h-54 flex-col rounded-lg border border-[#e8e0d3] bg-white p-6"
             >
-              <p className="text-sm font-medium">
-                {unidade.cidade}/{unidade.uf}
-                <span className="text-navy/40"> — {unidade.rotulo}</span>
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-navy/55">{unidade.endereco}</p>
-            </div>
+                <IconeLinha tipo="localizacao" className="h-5 w-5 text-dourado" />
+                <p className="mt-5 text-lg font-bold leading-tight tracking-[-0.025em]">
+                  {unidade.cidade}/{unidade.uf}
+                  <span className="block pt-1 text-base font-medium text-navy/50">{unidade.rotulo}</span>
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-navy/60">{unidade.endereco}</p>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${unidade.cidade}, ${unidade.uf}`)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-auto pt-5 text-sm font-semibold text-dourado transition hover:text-navy"
+                >
+                  Ver no mapa →
+                </a>
+              </article>
+            </Revelar>
           ))}
         </div>
       </div>
