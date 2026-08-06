@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://campanhas.fabioribeiroadvogados.com.br'),
   // Subdominio de trafego pago nao deve competir com o institucional no Google.
   robots: { index: false, follow: false },
+  icons: {
+    icon: [{ url: '/favicon.webp', type: 'image/webp', sizes: '32x32' }],
+  },
 }
 
 const PIXEL = process.env.NEXT_PUBLIC_META_PIXEL_ID
