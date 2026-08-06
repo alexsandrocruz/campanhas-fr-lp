@@ -8,9 +8,13 @@ import { Estatisticas } from '@/components/secoes/Estatisticas'
 import { Dores } from '@/components/secoes/Dores'
 import { Direitos } from '@/components/secoes/Direitos'
 import { ComoFunciona } from '@/components/secoes/ComoFunciona'
+import { Documentos } from '@/components/secoes/Documentos'
 import { Autoridade } from '@/components/secoes/Autoridade'
+import { VideoInstitucional } from '@/components/secoes/VideoInstitucional'
 import { Unidades } from '@/components/secoes/Unidades'
+import { ConteudosRelacionados } from '@/components/secoes/ConteudosRelacionados'
 import { Faq } from '@/components/secoes/Faq'
+import { AvisoAtendimento } from '@/components/secoes/AvisoAtendimento'
 import { Formulario } from '@/components/secoes/Formulario'
 import { Rodape } from '@/components/secoes/Rodape'
 import { BotaoWhatsApp } from '@/components/BotaoWhatsApp'
@@ -58,9 +62,13 @@ export default async function PaginaCampanha({ params }: Props) {
         <Dores campanha={campanha} />
         <Direitos campanha={campanha} />
         <ComoFunciona campanha={campanha} />
+        {campanha.documentos && <Documentos dados={campanha.documentos} />}
         <Autoridade />
+        {campanha.videoInstitucional && <VideoInstitucional dados={campanha.videoInstitucional} />}
         <Unidades />
+        {campanha.conteudosRelacionados && <ConteudosRelacionados dados={campanha.conteudosRelacionados} />}
         <Faq campanha={campanha} />
+        {campanha.avisoAtendimento && <AvisoAtendimento dados={campanha.avisoAtendimento} />}
         <Formulario campanha={campanha} />
       </main>
       <Rodape />

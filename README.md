@@ -30,6 +30,14 @@ const registro: Campanha[] = [bpcLoas, auxilioDoenca]
 
 Commit → a Vercel publica → `/auxilio-doenca` está no ar.
 
+### Blocos opcionais
+
+Quando fizer sentido para o tema, a campanha também pode declarar `documentos`,
+`conteudosRelacionados`, `videoInstitucional` e `avisoAtendimento`. Eles são renderizados
+somente quando existem no objeto da campanha; a página BPC/LOAS, por exemplo, não precisa
+ficar mais longa apenas para atender ao contrato. A campanha de aposentadoria por idade usa
+os quatro como exemplo de configuração.
+
 O TypeScript recusa o build se faltar algum campo obrigatório. Na prática, não dá pra
 publicar uma campanha sem FAQ ou sem mensagem de WhatsApp por esquecimento.
 
@@ -48,9 +56,11 @@ campanhas/
   tipos.ts                      O contrato: o que toda campanha precisa ter
   index.ts                      Registro das campanhas ativas
   bpc-loas.ts                   Conteúdo da campanha BPC/LOAS
+  aposentadoria-por-idade.ts    Conteúdo da campanha de aposentadoria por idade
 
 components/secoes/              Herói, Dores, Direitos, ComoFunciona,
-                                Autoridade, Unidades, Faq, Formulario, Rodape
+                                blocos opcionais, Autoridade, Unidades, Faq,
+                                Formulario, Rodape
 components/ui/                  LinkWhatsApp (rastreado), ícones
 
 lib/

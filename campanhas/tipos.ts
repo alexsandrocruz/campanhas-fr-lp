@@ -25,6 +25,19 @@ export type Faq = {
   resposta: string
 }
 
+/** Blocos complementares: cada campanha decide se precisa exibi-los. */
+export type DocumentoNecessario = {
+  titulo: string
+  descricao: string
+}
+
+export type ConteudoRelacionado = {
+  tipo: string
+  titulo: string
+  descricao: string
+  url: string
+}
+
 export type Campanha = {
   /** Vira a URL: campanhas.fabioribeiroadvogados.com.br/{slug} */
   slug: string
@@ -61,6 +74,36 @@ export type Campanha = {
   comoFunciona: {
     titulo: string
     passos: Passo[]
+  }
+
+  /** Itens que ajudam a pessoa a se preparar, sem substituir a análise do caso. */
+  documentos?: {
+    titulo: string
+    subtitulo: string
+    itens: DocumentoNecessario[]
+  }
+
+  /** Links informativos que podem ser usados conforme o tema da campanha. */
+  conteudosRelacionados?: {
+    titulo: string
+    subtitulo: string
+    itens: ConteudoRelacionado[]
+  }
+
+  /** Chamada para um vídeo ou para o canal institucional do escritório. */
+  videoInstitucional?: {
+    rotulo: string
+    titulo: string
+    descricao: string
+    cta: string
+    url: string
+  }
+
+  /** Orienta o próximo passo logo antes da conversão no formulário. */
+  avisoAtendimento?: {
+    titulo: string
+    texto: string
+    itens: string[]
   }
 
   faq: {
