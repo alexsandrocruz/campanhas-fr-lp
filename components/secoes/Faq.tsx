@@ -8,10 +8,10 @@ export function Faq({ campanha }: { campanha: Campanha }) {
 
   return (
     <section className="bg-creme-claro">
-      <div className="mx-auto max-w-3xl px-5 py-16 md:py-20">
+      <div className="mx-auto max-w-3xl px-5 py-16 md:py-24">
         <div className="text-center">
           <p className="rotulo">Dúvidas frequentes</p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl">
+          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold tracking-[-0.03em] md:text-4xl">
             {campanha.faq.titulo}
           </h2>
         </div>

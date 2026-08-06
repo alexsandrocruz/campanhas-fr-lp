@@ -44,10 +44,10 @@ export function Formulario({ campanha }: { campanha: Campanha }) {
 
   return (
     <section id="formulario" className="bg-navy text-white">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-20">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24 lg:px-8">
         <div>
           <p className="rotulo">Análise do seu caso</p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl">
+          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold tracking-[-0.03em] md:text-4xl">
             {campanha.formulario.titulo}
             <span className="block text-dourado">{campanha.formulario.subtitulo}</span>
           </h2>
@@ -59,7 +59,7 @@ export function Formulario({ campanha }: { campanha: Campanha }) {
           </ul>
         </div>
 
-        <form onSubmit={enviar} className="rounded-xl bg-creme-claro p-6 text-navy md:p-8">
+        <form onSubmit={enviar} className="rounded-xl bg-creme-claro p-6 text-navy shadow-2xl shadow-black/20 md:p-8">
           <div className="space-y-3">
             <input name="nome" required placeholder="Seu nome completo" className={campo} />
             <input
@@ -97,7 +97,7 @@ export function Formulario({ campanha }: { campanha: Campanha }) {
           <button
             type="submit"
             disabled={enviando}
-            className="mt-5 w-full rounded-full bg-dourado py-3.5 font-medium text-navy transition hover:brightness-105 disabled:opacity-60"
+            className="mt-5 w-full rounded-md bg-dourado py-3.5 font-semibold text-navy transition hover:brightness-105 disabled:opacity-60"
           >
             {enviando ? 'Enviando...' : 'Quero uma análise do meu caso'}
           </button>
@@ -106,7 +106,7 @@ export function Formulario({ campanha }: { campanha: Campanha }) {
             mensagem={campanha.whatsapp.mensagem}
             campanha={campanha.tracking.conteudo}
             origem="formulario"
-            className="mt-3 flex w-full items-center justify-center gap-2 rounded-full border border-verde py-3 text-sm font-medium text-verde-escuro transition hover:bg-verde/5"
+            className="mt-3 flex w-full items-center justify-center gap-2 rounded-md border border-verde py-3 text-sm font-semibold text-verde-escuro transition hover:bg-verde/5"
           >
             <IconeWhatsApp className="h-4 w-4" />
             Falar agora no WhatsApp

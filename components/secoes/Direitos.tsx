@@ -5,10 +5,10 @@ export function Direitos({ campanha }: { campanha: Campanha }) {
 
   return (
     <section className="bg-creme">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
+      <div className="mx-auto max-w-7xl px-5 py-16 md:py-24 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="rotulo">Áreas de atuação</p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl">
+          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold tracking-[-0.03em] md:text-4xl">
             {direitos.titulo}
           </h2>
           <p className="mt-4 text-navy/60">{direitos.subtitulo}</p>

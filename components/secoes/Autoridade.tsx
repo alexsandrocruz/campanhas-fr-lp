@@ -4,8 +4,8 @@ import { escritorio, anosDeAtuacao } from '@/lib/escritorio'
 export function Autoridade() {
   return (
     <section className="bg-creme-claro">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-20">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-navy/5">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24 lg:px-8">
+        <div className="revelar relative aspect-[4/3] overflow-hidden rounded-xl bg-navy/5 shadow-xl shadow-navy/10">
           <Image
             src={escritorio.fotos.escritorio}
             alt={`${escritorio.advogado} no escritório`}
@@ -15,12 +15,11 @@ export function Autoridade() {
           />
         </div>
 
-        <div>
+        <div className="revelar revelar-atraso-1">
           <p className="rotulo">O escritório</p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl">
-            Advocacia humanizada,
-            <br />
-            há {anosDeAtuacao} anos
+          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold leading-tight tracking-[-0.03em] md:text-4xl">
+            Advocacia que escuta,
+            <span className="block text-dourado">há {anosDeAtuacao} anos</span>
           </h2>
 
           <p className="mt-2 text-sm text-navy/50">
@@ -33,7 +32,7 @@ export function Autoridade() {
             construiu um escritório com {escritorio.unidades.length} unidades em três estados.
           </p>
 
-          <blockquote className="mt-6 border-l-2 border-dourado pl-4 text-navy/70 italic">
+          <blockquote className="mt-7 border-l-2 border-dourado pl-5 text-navy/70 italic">
             &ldquo;Nem toda causa previdenciária vira processo. Parte do trabalho é explicar,
             com honestidade, o que realmente dá para fazer.&rdquo;
           </blockquote>
