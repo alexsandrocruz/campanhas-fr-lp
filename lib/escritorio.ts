@@ -20,8 +20,9 @@ export const escritorio = {
    * Escritório: horizontal, proporção 4:3.
    */
   fotos: {
-    advogado: '/dr-fabio-ribeiro.jpg',
-    escritorio: '/dr-fabio-ribeiro-escritorio.jpg',
+    advogado: '/dr-fabio-ribeiro.webp',
+    escritorio: '/dr-fabio-ribeiro-escritorio.webp',
+    logo: '/logo-fabio-ribeiro.png',
   },
 
   unidades: [
