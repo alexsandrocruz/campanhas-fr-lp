@@ -12,7 +12,7 @@ export const escritorio = {
   email: 'contato@fabioribeiroadvogados.com.br',
   siteInstitucional: 'https://fabioribeiroadvogados.com.br',
   youtube: 'https://www.youtube.com/@fabioribeiroadvogados',
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? '5579999999999',
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? '5561947580885',
 
   /**
    * Fotos. Coloque os arquivos em public/ com exatamente estes nomes.
