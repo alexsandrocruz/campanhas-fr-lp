@@ -47,7 +47,7 @@ publicar uma campanha sem FAQ ou sem mensagem de WhatsApp por esquecimento.
 
 ```
 app/
-  layout.tsx                    Pixel Meta + gtag (GA4/Google Ads), noindex global
+  layout.tsx                    Pixel Meta + tag do Google Ads, noindex global
   [campanha]/page.tsx           Monta a landing a partir do objeto Campanha
   [campanha]/obrigado/          Página de conversão — onde o evento Lead dispara
   robots.ts                     Bloqueia indexação do subdomínio inteiro
@@ -87,14 +87,11 @@ E as variáveis de ambiente na Vercel (veja `.env.example`):
 | Variável | Para quê |
 |---|---|
 | `NEXT_PUBLIC_WHATSAPP` | Número de destino, só dígitos: `55` + DDD + número |
-| `NEXT_PUBLIC_META_PIXEL_ID` | Pixel do Meta Ads |
-| `NEXT_PUBLIC_GA4_ID` | Medição do GA4 |
-| `NEXT_PUBLIC_GOOGLE_ADS_ID` | Tag do Google Ads (`AW-XXXXXXXXXX`) |
-| `NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL` | Rótulo da conversão de lead (`AW-XXXXXXXXXX/rótulo`) |
 | `NEXT_PUBLIC_LEADS_EMBED_API_URL` | API pública do Dominus Leads; sem ela, usa STG temporariamente |
 
-GA4 e Google Ads dividem o mesmo `gtag.js`: basta preencher uma das duas variáveis para o
-script carregar, e as duas para medir nos dois lugares.
+O Pixel do Meta e a tag do Google Ads ficam fixos em `app/layout.tsx` — é uma campanha só,
+não passam por variável de ambiente. O rótulo da conversão de lead do Ads fica em
+`lib/tracking.ts` (`ADS_LEAD`), ainda pendente.
 
 O identificador do formulário é definido em cada campanha. O script do Dominus cria o lead
 diretamente no sistema geral e a conversão só é registrada após o evento de sucesso do embed.

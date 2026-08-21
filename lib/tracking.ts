@@ -18,10 +18,15 @@ declare global {
 type Dados = Record<string, unknown>
 
 /**
- * Rotulo da conversao de lead no Google Ads (formato AW-XXXX/rotulo).
- * Sem ele o Ads recebe o evento no GA4, mas nao contabiliza conversao.
+ * Conversao de lead no Google Ads.
+ *
+ * TODO: colar o rotulo da acao de conversao aqui, no formato
+ * 'AW-18125381161/xxxxxxxxxxxxx'. Pegue em Google Ads > Objetivos >
+ * Conversoes > acao de lead > "Instalar a tag manualmente".
+ *
+ * Enquanto estiver vazio a tag so faz remarketing: o Ads nao contabiliza lead.
  */
-const ADS_LEAD = process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL
+const ADS_LEAD = ''
 
 function meta(evento: string, dados: Dados) {
   if (typeof window === 'undefined' || !window.fbq) return
