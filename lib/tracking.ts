@@ -17,6 +17,12 @@ declare global {
 
 type Dados = Record<string, unknown>
 
+/**
+ * Rotulo da conversao de lead no Google Ads (formato AW-XXXX/rotulo).
+ * Sem ele o Ads recebe o evento no GA4, mas nao contabiliza conversao.
+ */
+const ADS_LEAD = process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL
+
 function meta(evento: string, dados: Dados) {
   if (typeof window === 'undefined' || !window.fbq) return
   window.fbq('track', evento, dados)
@@ -37,6 +43,7 @@ export function eventoWhatsApp(campanha: string, origem: string) {
 export function eventoLead(campanha: string) {
   meta('Lead', { content_name: campanha })
   ga('generate_lead', { campanha })
+  if (ADS_LEAD) ga('conversion', { send_to: ADS_LEAD, campanha })
 }
 
 /** Rolagem profunda — util pra medir qualidade do trafego pago. */
